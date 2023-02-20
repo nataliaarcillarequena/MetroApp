@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link th:href = "@{style.css}" rel="stylesheet"/>
+<meta charset="ISO-8859-1">
+<title>Metro System App</title>
+</head>
+<body>
+
+<div class="menu-form">
+	<div class="logo">
+		<img alt="train" th:src="@{train.png}"> 
+	</div>
+	
+	<h1 class="title">Metro System app</h1>
+	
+	<h3 th:text = "${message1}" style = "color: green"></h3>
+	<h3 th:text = "${message2}" style = "color: red"></h3>
+	
+	<div class="menu-functionality-form">
+		
+		
+		<div class="functionality-format-swipe">
+			<h2 class="title">Swipe In and Out</h2>
+			<!-- making the swipe in table -->
+			<table>
+				<!-- tr: table row -->
+				<tr>
+					<!-- table header -->
+					<th>Station</th>
+					<th colspan="2">Action</th>
+				</tr>
+		
+			<!-- row with the data -->
+				<tr th:each="swipeIn : ${journies}">
+			
+				<!-- table data -->
+					<td class="first-td" th:text="${swipeIn.stations}"></td>
+			<!-- this href is taking into consideration what the url will output, 
+			so using this location specific reference to catch which station the 
+			user is choosing to swipe into-->
+					<td><a class="swipe" th:href="@{'./swipeInChoice?station='+${swipeIn.stations}}">Swipe In</a></td>
+					<td><a class="swipe" th:href="@{'./swipeOutChoice?station='+${swipeIn.stations}}">Swipe Out</a></td> 
+				</tr>
+			</table>
+		</div>
+	
+		<div class="functionality-format-topUp">
+			<h2 class="title">Metro Card <br>Top Up</h2>
+			<form class="user-login-form-2" action="./topUpPage">
+				<input class = "top-up-button" type = "submit" value = "Top Up">
+			</form>
+		</div>
+	</div>
+	<!-- MAKE CHANGES HERE -->
+	<br>
+	<div class="register-form">
+		<a href="./logout">Log Out</a>
+	</div>
+</div>
+
+</body>
+</html>

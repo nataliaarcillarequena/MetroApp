@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<link th:href = "@{style.css}" rel="stylesheet"/>
+<meta charset="ISO-8859-1">
+<title>Metro System App</title>
+</head>
+<body>
+
+<div class = "login-form">
+	<div class="logo">
+		<img alt="train" th:src="@{train.png}"> 
+	</div>
+	
+	<h1 class="title">Welcome to the Metro System app</h1>
+	<br>
+	
+	<div class="form">
+		<form class=user-login-form action="#" th:action = "@{./login}" th:object = "${user}" th:method=post>
+			<input type = "text" placeholder="User Name" th:field="${user.userName}" required minlength="1"> <!-- can add placeholder and constraints here to not have bugs -->
+			<input type="password" placeholder="Password" th:field="${user.password}" required minlength="1">
+	
+			<input class="button" type="submit" value="Login">
+			<p class = "login-error" th:text = "${message}"></p>
+		</form>
+	</div>
+	<!-- would it work if i did a form with an action to go to the new page
+	i think it should!!- try it -->
+	
+	<!-- added this -->
+	<div class="register-form">
+		<form class="register-input" action="./registerUser">
+			<strong>New User?</strong>
+			<input class="button" type = "submit" value = "Register here">
+		</form>
+	</div>
+</div>
+	
+
+</body>
+</html>

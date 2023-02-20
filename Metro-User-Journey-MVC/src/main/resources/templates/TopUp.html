@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Metro System App</title>
+</head>
+<body>
+
+<h1>METRO SYSTEM APP</h1>
+	<h2>Your current balance is</h2>
+	<h2 th:text = "${balance}" style = "color: purple"></h2>
+
+	<h2>Please enter Top Up amount</h2>
+	<form action="./topUp">
+	<input type = "number" name = "increment">
+	<br>
+	<input type="submit" value="Top up">
+	</form>
+	
+	<h3 th:text = "${message1}" style= "color: green"></h3>
+	<h3 th:text = "${message2}" style= "color: red"></h3>
+	
+	<br>
+	<a href="./menu">Back to Menu</a>
+	<br>
+	<a href="./logout">Log Out</a>
+</body>
+</html>

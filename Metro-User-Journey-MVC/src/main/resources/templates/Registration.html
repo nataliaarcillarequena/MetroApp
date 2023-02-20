@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link th:href = "@{style.css}" rel="stylesheet"/>
+<meta charset="ISO-8859-1">
+<title>Metro System App</title>
+</head>
+<body>
+
+<div class = "login-form">
+	<div class="logo">
+		<img alt="train" th:src="@{train.png}"> 
+	</div>
+	
+	<h1 class="title">Register for the Metro System app</h1>
+	
+	<div class = "form">
+		<form class="user-login-form" action="#" th:action = "@{./register}" th:object = "${user}" th:method=post>
+			Please enter First Name *
+			<input type = "text" th:field="${user.firstName}" required minlength="1"> <!-- can add placeholder and constraints here to not have bugs -->
+		
+			Please enter Surname *
+			<input type = "text" th:field="${user.surname}" required minlength="1"> <!-- can add placeholder and constraints here to not have bugs -->
+		
+			Please choose User Name *
+			<input type = "text" th:field="${user.userName}" required minlength="1"> <!-- can add placeholder and constraints here to not have bugs -->
+		
+			Please choose Password *
+			<input type="password" th:field="${user.password}" required minlength="1">
+			<input class="button2" type="submit" value="Register">
+			<p class = "login-error" th:text = "${message}"></p>
+		</form>
+	</div>
+	
+	<br>
+	<div class="title">
+	<a href="./">Back to Log In</a>
+	</div>
+</div>
+
+</body>
+</html>
