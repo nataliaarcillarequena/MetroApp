@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link th:href = "@{style.css}" rel="stylesheet"/>
 <meta charset="ISO-8859-1">
 <title>Metro System App</title>
 </head>
 <body>
 
-<h1>METRO SYSTEM APP</h1>
-	<h2>Your current balance is</h2>
-	<h2 th:text = "${balance}" style = "color: purple"></h2>
+<div class = "login-form">
+	<div class="logo">
+		<img alt="train" th:src="@{train.png}"> 
+	</div>
+	<h1 class = "title">Metro System Top Up</h1>
+	
+	<h3 class="menu-success" th:text = "${message1}"></h3>
+	<h3 class="menu-error" th:text = "${message2}"></h3>
+	
+	<h2 class= "title">Your current balance:</h2>
+	<h2 class="menu-success" th:text = "${balance}"></h2>
 
-	<h2>Please enter Top Up amount</h2>
-	<form action="./topUp">
-	<input type = "number" name = "increment">
-	<br>
-	<input type="submit" value="Top up">
+	<h2 class = "title">Please enter Top Up amount</h2>
+	<div class = "form">
+		<form class="user-login-form" action="./topUp">
+			<input type = "number" min="0" name = "increment" pattern = "[0-9]*" required minlength="1">
+		<input class="button" type="submit" value="Top up">
 	</form>
+	</div>
 	
-	<h3 th:text = "${message1}" style= "color: green"></h3>
-	<h3 th:text = "${message2}" style= "color: red"></h3>
+	<div class="top-up-form">
+		<form class="top-up-destinations" action="./menu">
+			<input class="button" type="submit" value = "Back to Menu">
+		</form>
+		<form class="top-up-destinations" action="./logout">
+			<input class="button" type="submit" value = "Log Out">
+		</form>
+	</div>
 	
-	<br>
-	<a href="./menu">Back to Menu</a>
-	<br>
-	<a href="./logout">Log Out</a>
+</div>
+
 </body>
 </html>

@@ -135,7 +135,7 @@ public class MetroController {
 		
 		if(swipeInUser!=null) {
 			//possitive outcome- message- successful swipe in 
-			modelAndView.addObject("message1", "Successfully swipped in at " + station);
+			modelAndView.addObject("message1", "Successfully swipped in at " + station +"!");
 			//modelAndView.setViewName("Menu");
 		}else if (!metroService.swipInCheck(user.getUserName())) {
 			//error message - already swiped in, please swipe out
@@ -165,7 +165,7 @@ public class MetroController {
 		
 		if(swipeOutUser != null) {
 			//say success
-			modelAndView.addObject("message1", "Successfully swipped out at "+ station + ". Total Fare: " + swipeOutUser.getTotalFare()+"Rs");
+			modelAndView.addObject("message1", "Successfully swipped out at "+ station + "!\nTotal Fare: " + swipeOutUser.getTotalFare()+"Rs");
 		}else {
 			//error- need to swipe in first before swipping out 
 			modelAndView.addObject("message2", "You have not yet swipped in, please swipe in to swipe out");

@@ -8,14 +8,19 @@
 <body>
 
 <div class="menu-form">
-	<div class="logo">
+	<div class="menu-logout">
+		<form class="menu-logout-form" action="./logout">
+			<input class="button" type = "submit" value="Log Out">
+		</form>
+	</div>
+	<div class="logo-menu">
 		<img alt="train" th:src="@{train.png}"> 
 	</div>
 	
 	<h1 class="title">Metro System app</h1>
 	
-	<h3 th:text = "${message1}" style = "color: green"></h3>
-	<h3 th:text = "${message2}" style = "color: red"></h3>
+	<h3 class="menu-success" th:text = "${message1}"></h3>
+	<h3 class="menu-error" th:text = "${message2}"></h3>
 	
 	<div class="menu-functionality-form">
 		
@@ -51,11 +56,6 @@
 				<input class = "top-up-button" type = "submit" value = "Top Up">
 			</form>
 		</div>
-	</div>
-	<!-- MAKE CHANGES HERE -->
-	<br>
-	<div class="register-form">
-		<a href="./logout">Log Out</a>
 	</div>
 </div>
 

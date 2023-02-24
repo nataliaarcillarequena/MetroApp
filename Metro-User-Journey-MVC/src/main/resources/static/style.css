@@ -17,8 +17,31 @@
 	margin:30px auto;
 	width: 1000px;
 	background-color: #F4BB44;
-	padding: 55px;
+	padding: 0px 30px 30px 30px;
 	border-radius: 30px;
+	padding-top: 0px;
+}
+
+.menu-logout{
+	display:flex;
+	justify-content: right;
+	padding: 5px;
+	width:98%;
+	margin:6px -30px -10px 0px;
+}
+
+.menu-logout-form{
+	display:flex;
+	justify-content:center;
+	margin:8px -30px -15px 0px;
+	
+}
+
+.menu-logout-form input{
+	background-color: white;
+	border-radius: 50px;
+	border-color:transparent;
+	padding: 5px 20px 5px 20px;
 }
 
 .logo{
@@ -30,7 +53,21 @@
 	margin-bottom:10px;
 }
 
+.logo-menu{
+	background-color: white;
+	width:100px;
+	height: 100px;
+	border-radius: 50%;
+	margin-top: -100x;
+	margin: auto;
+	margin-bottom: -10px;
+}
+
 .logo img{
+	width: 80%;
+}
+
+.logo-menu img{
 	width: 80%;
 }
 
@@ -48,7 +85,33 @@
 	display: flex;
 	justify-content: center;
 	flex-direction: row;
-	gap: 50px;
+	gap: 20px;
+}
+
+.top-up-form{
+	display: flex;
+	justify-content: center;
+	flex-direction:row;
+	width: 100%;
+	gap:10px;
+	/*width:100%;*/
+}
+
+
+.top-up-destinations{
+	margin-top:12px;
+	display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    width: 100%
+}
+
+.top-up-form input{
+	font-size: 19px;
+	padding:10px 20px 10px 10px;
+	outline:none;
+	background-color:black;
 }
 
 .functionality-format-swipe{
@@ -147,6 +210,19 @@
 	font-style: italic;
 	color: #484848;
 	margin-top: -10px
+}
+
+.menu-error{
+	text-align: center;
+	font-size: 24px;
+	font-style: italic;
+	color: #484848;
+}
+
+.menu-success{
+	text-align: center;
+	font-size: 24px;
+	color: white;
 }
 
 .register-form input{
